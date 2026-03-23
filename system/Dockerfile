@@ -1,9 +1,10 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY . .
 
-EXPOSE 8080
+RUN chmod +x mvnw
+RUN ./mvnw clean package -DskipTests
 
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-jar","target/*.jar"]
