@@ -7,4 +7,6 @@ COPY . .
 RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
-ENTRYPOINT ["java","-jar","target/*.jar"]
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","target/system-0.0.1-SNAPSHOT.jar"]
