@@ -39,7 +39,7 @@ public class UrlService {
 
         repository.save(url);//insert query --save
 
-        return "http://localhost:8080/" + id;
+        return "https://snip-rmkk.onrender.com/" + id;
     }
 
     public Optional<Url> getOriginalUrl(String id) {
